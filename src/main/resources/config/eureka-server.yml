@@ -1,0 +1,15 @@
+# Удаленные настройки для eureka-server(обнаружение служб)
+server:
+  port: 8070
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultUrl:
+        defaultZone:
+          http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 5

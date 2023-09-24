@@ -1,0 +1,7 @@
+example:
+  property: I am DEV organization
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:1777/licensing-db
+    username: postgres
+    password: 2175

@@ -1,0 +1,25 @@
+# Тут указаны настройки трёх вариантов получения конфигурации для сервисов которые будут к нему подключаться
+# native - получение конфига из файла
+# git - получение конфига из удалённого репозитория
+# vault - получение конфига из защищённого хранилища
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+#    - native, git, vault # профили в порядке возрастания приоритета (т.е. последний самый приоритетный)
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config # указан путь к папке с настройками внутри данного сервиса
+#        git:
+#          uri: https://github.com/ihuaylupo/config.git # подключение к облачному репозиторию
+#          search-paths: licensingservice # это относительный путь в репозитории git
+#        vault: # настройки подключения к защищённому хранилищу vault(ключ = значение), правда у меня не получилось=(
+#          port: 8200
+#          kv-version: 2
+#          host: http://localhost
+
+server:
+  port: 8071
